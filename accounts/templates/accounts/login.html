@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-	   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<title>Hello world</title>
-	{% load static %}
-	<link rel="stylesheet" type="text/css" href="{% static 'accounts/style.css' %}">
-</head>
-<body>
-	<div class="container">
-<P>This is the linking</p>
-	<button class="btn btn-success" name="button" type="button">Submit</button>
+{% extends 'base.html' %}
+
+
+{% block body %}
+<div class="container">
+<h1>Welcome to the Login page</h1>
+<p>
+	You Can log in here!!!
+</p>
+<h2>Login</h2>
+<form method="post">
+	{% csrf_token %}
+	{{  form.as_p }}
+	<button type="submit">Login</button>
+</form>
 </div>
-<div class="jumbotron"><h1> Welcome to login page</h1></div>
-</body>
-</html>
+{% endblock %}
