@@ -11,7 +11,7 @@ class UserProfile(models.Model):
 
 
 	def __str__(self):
-		return self.user.username
+	 	return self.user.username
 
 def create_profile(sender, **kwargs):
 	if kwargs['created']:

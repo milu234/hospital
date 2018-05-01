@@ -42,3 +42,9 @@ class EditProfileForm(UserChangeForm):
 			'last_name',
 			'password'
 			)
+class ProfileForm(forms.Form):
+	#user = forms.OneToOneField(User)
+	description = forms.CharField(max_length = 100)
+	city = forms.CharField(max_length = 100)
+	website = forms.CharField()
+	phone = forms.IntegerField()
