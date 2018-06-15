@@ -9,15 +9,15 @@ from django.contrib.auth import update_session_auth_hash
 # from django.contrib.auth.decorators import 
 from django.views.generic import TemplateView
 from django.shortcuts import render
-from accounts.forms import ProfileForm
-from accounts.models import UserProfile
+#from accounts.forms import ProfileForm
+#from accounts.models import UserProfile
 
-class ProfileView(TemplateView):
-	template_name='accounts/profile.html'
+# class ProfileView(TemplateView):
+# 	template_name='accounts/profile.html'
 
-	def get(self,request):
-		form=ProfileForm()
-		return render(request, self.template_name,{'form':form})
+# 	def get(self,request):
+# 		form=ProfileForm()
+# 		return render(request, self.template_name,{'form':form})
 
 # Create your views here.
 
@@ -38,7 +38,10 @@ def register(request):
 	args = {'form': form }
 	return render(request, 'accounts/reg_form.html',args)
 
-	
+# def logout(request):
+#     auth_logout(request)
+#     return redirect('/')
+
 
 def view_profile(request):
 	args = {'user':request.user}

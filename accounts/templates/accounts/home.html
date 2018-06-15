@@ -55,9 +55,18 @@
     <div class="col-sm-4">
       <div class="panel panel-primary">
         <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="amazon.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
         <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
       </div>
+      <a href="/accounts/logout" onclick="signOut();">Sign out</a>
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
     </div>
     <div class="col-sm-4"> 
       <div class="panel panel-danger">
