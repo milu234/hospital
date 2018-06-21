@@ -30,6 +30,8 @@ ALLOWED_HOSTS = []
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='1092751070710-p797sa71hq6plkd9976ao5j4rvuorhid.apps.googleusercontent.com'  #Paste CLient Key
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'Kay8qVFC9LRfJ57oucGVAUKx' #Paste Secret Key
 
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -141,7 +143,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = '/accounts/'
+#LOGIN_REDIRECT_URL = '/accounts/'
+LOGIN_URL = 'home'
 LOGOUT_REDIRECT_URL = '/'
 
 EMAIL_HOST = 'localhost'
