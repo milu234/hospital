@@ -11,6 +11,7 @@ from django.views.generic import TemplateView
 from django.shortcuts import render
 #from accounts.forms import ProfileForm
 #from accounts.models import UserProfile
+from django.contrib.auth.decorators import login_required
 
 # class ProfileView(TemplateView):
 # 	template_name='accounts/profile.html'
@@ -22,6 +23,10 @@ from django.shortcuts import render
 # Create your views here.
 
 def home(request):
+	numbers = [1,2,3,4,5]
+	name = 'Milan'
+
+	args = {'myName':name, 'numbers':numbers}
 	return render(request,'accounts/home.html')
 
 
@@ -39,15 +44,20 @@ def register(request):
 	return render(request, 'accounts/reg_form.html',args)
 
 # def logout(request):
-#     auth_logout(request)
-#     return redirect('/')
+# 	auth_logout(request)
+# 	return redirect('/')
+ 	
+ 	
 
+     
+     
 
+@login_required
 def view_profile(request):
 	args = {'user':request.user}
 	return render(request,'accounts/profile.html',args)
 
-
+@login_required
 def edit_profile(request):
 	if request.method == "POST":
 		form = EditProfileForm(request.POST,instance=request.user)

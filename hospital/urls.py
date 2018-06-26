@@ -20,8 +20,8 @@ from hospital import views
 
 urlpatterns = [
     url(r'^$',views.login_redirect, name='login_redirect'),
-    url(r'^admin/', admin.site.urls),
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/',include('accounts.urls',namespace='accounts')),
     url(r'^auth/', include('social_django.urls', namespace='social')),
-   #url(r'^logout/$', 'accounts.views.logout'),
+    #url(r'^logout/$', 'accounts.views.logout'),
 ]

@@ -49,7 +49,7 @@ INSTALLED_APPS = [
 
 ]
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -58,7 +58,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'hospital.middleware.LoginRequiredMiddleware',
+    'hospital.middleware.LoginRequiredMiddleware',
 ]
 
 ROOT_URLCONF = 'hospital.urls'
@@ -144,8 +144,23 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #LOGIN_REDIRECT_URL = '/accounts/'
-LOGIN_URL = 'home'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = '/accounts/login/'
+LOGOUT_REDIRECT_URL = '/accounts/'
 
-EMAIL_HOST = 'localhost'
-EMAIL_PORT = 1025
+LOGIN_EXEMPT_URLS =  (
+    
+    r'^accounts/logout/$',
+    r'^accounts/register/$',
+    r'^accounts/reset-password/$',
+   
+    r'^reset-password/done/$',
+    r'^reset-password/confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$',
+    r'^reset-password/complete/$'
+     r'^auth/'
+    )
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'milanhazra234.mh@gmail.com'
+EMAIL_HOST_PASSWORD = 'jordanbelfort@123'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
