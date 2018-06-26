@@ -159,8 +159,3 @@ LOGIN_EXEMPT_URLS =  (
      r'^auth/'
     )
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'milanhazra234.mh@gmail.com'
-EMAIL_HOST_PASSWORD = 'jordanbelfort@123'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
