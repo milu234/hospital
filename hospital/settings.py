@@ -156,6 +156,6 @@ LOGIN_EXEMPT_URLS =  (
     r'^reset-password/done/$',
     r'^reset-password/confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$',
     r'^reset-password/complete/$'
-     r'^auth/'
+     r'^auth/',
     )
 
